@@ -1,0 +1,252 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#
+MvcTextTemplateHost mvcHost = (MvcTextTemplateHost)(Host);
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using RestApp.Web.Controllers;
+using RestApp.Services.Localization;
+using RestApp.Services.Security;
+using RestApp.Core;
+
+namespace <#= mvcHost.Namespace #>
+{
+    public class <#= mvcHost.ControllerName #> : BaseApController
+    {
+<#
+if(!mvcHost.AddActionMethods) {
+#>
+        //
+        // GET: <#= (!String.IsNullOrEmpty(mvcHost.AreaName)) ? ("/" + mvcHost.AreaName) : String.Empty #>/<#= mvcHost.ControllerRootName #>/
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+<#
+}
+#>
+<#
+if(mvcHost.AddActionMethods) {
+#>
+		#region Fields
+
+        private readonly ILocalizationService gLocalizationService;
+        private readonly IPermissionService gPermissionService;
+        private readonly IWorkContext gWorkContext;
+        private readonly I<#= mvcHost.ControllerRootName #>Service g<#= mvcHost.ControllerRootName #>Service;
+
+        #endregion
+
+		#region Constructors
+
+        public <#= mvcHost.ControllerName #>(ILocalizationService localizationService, IPermissionService permissionService, IWorkContext workContext,
+            I<#= mvcHost.ControllerRootName #>Service <#= mvcHost.ControllerRootName.ToLower() #>Service)
+        { 
+            this.gLocalizationService = localizationService;
+            this.gPermissionService = permissionService;
+            this.gWorkContext = workContext;
+            this.g<#= mvcHost.ControllerRootName #>Service = <#= mvcHost.ControllerRootName.ToLower() #>Service;
+        }
+
+        #endregion
+
+		#region <#= mvcHost.ControllerRootName #>
+
+		public ActionResult Index()
+        {
+            return RedirectToAction("Lista");
+        }
+
+		// GET: /<#= mvcHost.ControllerRootName #>/
+        public ActionResult Lista(string q = "")
+        {
+            if (!gPermissionService.Authorize(StandardPermissionProvider.Administracion<#= mvcHost.ControllerRootName #>s))
+            {
+                return AccessDeniedView();
+            }
+
+            List<List<#= mvcHost.ControllerRootName #>Model> listModel = new List<List<#= mvcHost.ControllerRootName #>Model>();
+
+            listModel = g<#= mvcHost.ControllerRootName #>Service.Get<#= mvcHost.ControllerRootName #>s(true).Select(u => new List<#= mvcHost.ControllerRootName #>Model()
+            {
+                Id = u.Id,
+                XX = u.XX
+            }).ToList();
+
+            return View(listModel);
+        }
+
+		// GET: /<#= mvcHost.ControllerRootName #>/Crear
+        public ActionResult Crear()
+        {
+            if (!gPermissionService.Authorize(StandardPermissionProvider.Administracion<#= mvcHost.ControllerRootName #>s))
+            {
+                return AccessDeniedView();
+            }
+
+            var <#= mvcHost.ControllerRootName.ToLower() #>Model = new <#= mvcHost.ControllerRootName #>Model();           
+
+            <#= mvcHost.ControllerRootName.ToLower() #>Model = LoadSelectListItems(<#= mvcHost.ControllerRootName.ToLower() #>Model);
+
+            return View(<#= mvcHost.ControllerRootName.ToLower() #>Model);
+        }
+
+        // POST: /<#= mvcHost.ControllerRootName #>/Crear
+        [HttpPost]
+        public ActionResult Crear(<#= mvcHost.ControllerRootName #>Model <#= mvcHost.ControllerRootName.ToLower() #>Model)
+        {
+            if (!gPermissionService.Authorize(StandardPermissionProvider.Administracion<#= mvcHost.ControllerRootName #>s))
+            {
+                return AccessDeniedView();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var <#= mvcHost.ControllerRootName.ToLower() #> = new <#= mvcHost.ControllerRootName #>()
+                {
+                    XX = <#= mvcHost.ControllerRootName.ToLower() #>Model.XX,
+
+                    CreateBy = gWorkContext.CurrentUser.Id,
+                    EditBy = gWorkContext.CurrentUser.Id,
+                    DateCreateOn = DateTime.UtcNow,
+                    DateEditOn = DateTime.UtcNow
+                };
+
+                g<#= mvcHost.ControllerRootName #>Service.Insertar<#= mvcHost.ControllerRootName #>(<#= mvcHost.ControllerRootName.ToLower() #>);
+
+				SuccessNotification(gLocalizationService.GetResource("Controller.Success.<#= mvcHost.ControllerRootName #>.Insertar"));
+
+                return RedirectToAction("Index");
+            }
+
+            <#= mvcHost.ControllerRootName.ToLower() #>Model = LoadSelectListItems(<#= mvcHost.ControllerRootName.ToLower() #>Model);
+
+            return View(<#= mvcHost.ControllerRootName.ToLower() #>Model);
+        }
+
+        // GET: /<#= mvcHost.ControllerRootName #>/Editar/
+        public ActionResult Editar(int id = 0)
+        {
+            if (!gPermissionService.Authorize(StandardPermissionProvider.Administracion<#= mvcHost.ControllerRootName #>s))
+            {
+                return AccessDeniedView();
+            }
+
+            <#= mvcHost.ControllerRootName #> <#= mvcHost.ControllerRootName.ToLower() #> = g<#= mvcHost.ControllerRootName #>Service.Get<#= mvcHost.ControllerRootName #>PorId(id);
+            if (<#= mvcHost.ControllerRootName.ToLower() #> == null)
+            {
+                return HttpNotFound();
+            }
+
+            var <#= mvcHost.ControllerRootName.ToLower() #>Model = new <#= mvcHost.ControllerRootName #>Model();
+
+            <#= mvcHost.ControllerRootName.ToLower() #>Model.Id = <#= mvcHost.ControllerRootName.ToLower() #>.Id;
+            <#= mvcHost.ControllerRootName.ToLower() #>Model.XX = <#= mvcHost.ControllerRootName.ToLower() #>.XX;            
+
+            <#= mvcHost.ControllerRootName.ToLower() #>Model = LoadSelectListItems(<#= mvcHost.ControllerRootName.ToLower() #>Model, <#= mvcHost.ControllerRootName.ToLower() #>);
+
+            return View(<#= mvcHost.ControllerRootName.ToLower() #>Model);
+        }
+
+        // POST: /<#= mvcHost.ControllerRootName #>/Editar/
+        [HttpPost]
+        public ActionResult Editar(<#= mvcHost.ControllerRootName #>Model <#= mvcHost.ControllerRootName.ToLower() #>Model)
+        {
+            if (!gPermissionService.Authorize(StandardPermissionProvider.Administracion<#= mvcHost.ControllerRootName #>s))
+            {
+                return AccessDeniedView();
+            }
+
+            var <#= mvcHost.ControllerRootName.ToLower() #> = g<#= mvcHost.ControllerRootName #>Service.Get<#= mvcHost.ControllerRootName #>PorId(<#= mvcHost.ControllerRootName.ToLower() #>Model.Id);
+
+            if (<#= mvcHost.ControllerRootName.ToLower() #> == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    <#= mvcHost.ControllerRootName.ToLower() #>.XX = <#= mvcHost.ControllerRootName.ToLower() #>Model.XX;  
+
+                    <#= mvcHost.ControllerRootName.ToLower() #>.CreateBy = gWorkContext.CurrentUser.Id;
+                    <#= mvcHost.ControllerRootName.ToLower() #>.EditBy = gWorkContext.CurrentUser.Id;
+                    <#= mvcHost.ControllerRootName.ToLower() #>.DateCreateOn = DateTime.UtcNow;
+                    <#= mvcHost.ControllerRootName.ToLower() #>.DateEditOn = DateTime.UtcNow;
+
+                    g<#= mvcHost.ControllerRootName #>Service.Actualizar<#= mvcHost.ControllerRootName #>(<#= mvcHost.ControllerRootName.ToLower() #>);
+
+                    SuccessNotification(gLocalizationService.GetResource("Controller.Success.<#= mvcHost.ControllerRootName #>.Actualizar"));
+
+                    return RedirectToAction("Index");
+                    
+                }
+                catch (Exception exc)
+                {
+                    ModelState.AddModelError("", exc.ToString());
+                }
+            }
+
+            <#= mvcHost.ControllerRootName.ToLower() #>Model = LoadSelectListItems(<#= mvcHost.ControllerRootName.ToLower() #>Model);
+
+            return View(<#= mvcHost.ControllerRootName.ToLower() #>Model);
+        }
+
+		public ActionResult Borrar(int id)
+        {
+            if (!gPermissionService.Authorize(StandardPermissionProvider.Administracion<#= mvcHost.ControllerRootName #>s))
+            {
+                return AccessDeniedView();
+            }
+
+            var <#= mvcHost.ControllerRootName.ToLower() #> = g<#= mvcHost.ControllerRootName #>Service.Get<#= mvcHost.ControllerRootName #>PorId(id);
+            if (<#= mvcHost.ControllerRootName.ToLower() #> == null)
+            {
+                return HttpNotFound();
+            }
+			try
+			{
+
+				g<#= mvcHost.ControllerRootName #>Service.Borrar<#= mvcHost.ControllerRootName #>(<#= mvcHost.ControllerRootName.ToLower() #>);
+
+				SuccessNotification(gLocalizationService.GetResource("Controller.Success.<#= mvcHost.ControllerRootName #>.Borrar"));
+
+			}
+			catch (Exception)
+            {
+                ErrorNotification(gLocalizationService.GetResource("Controller.Error.<#= mvcHost.ControllerRootName #>"));
+                // TODO: Error al guardar Log
+                //gLogger.Error(string.Format("Exception: {0}", ex.ToString(), gWorkContext.CurrentUser), null, gWorkContext.CurrentUser);                
+            }
+
+            return RedirectToAction("Index");
+        }
+
+		#endregion
+
+		#region Utilities
+
+        [NonAction]
+        protected <#= mvcHost.ControllerRootName #>Model LoadSelectListItems(<#= mvcHost.ControllerRootName #>Model <#= mvcHost.ControllerRootName.ToLower() #>Model, <#= mvcHost.ControllerRootName #> <#= mvcHost.ControllerRootName.ToLower() #> = null)
+        {
+            <#= mvcHost.ControllerRootName.ToLower() #>Model.XX = gXXService.GetXX().Select(u => new SelectListItemGroup()
+            {
+                Text = u.XX,
+                Value = u.Id.ToString(),
+                Selected = <#= mvcHost.ControllerRootName.ToLower() #> != null ? u.Id == <#= mvcHost.ControllerRootName.ToLower() #>.XXId : false
+            }).ToList();
+
+            return <#= mvcHost.ControllerRootName.ToLower() #>Model;
+        }
+
+        #endregion
+<#
+}
+#>
+    }
+}

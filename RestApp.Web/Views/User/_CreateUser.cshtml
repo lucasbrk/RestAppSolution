@@ -1,0 +1,72 @@
+﻿@model RestApp.Web.Models.Users.NewUserModel
+
+        <div class="control-group">
+				@Html.LabelFor(model => model.Name, new { @class = "control-label" })
+			<div class="controls">
+				@Html.TextBoxFor(model => model.Name)
+			</div>
+		</div>
+	
+        <div class="control-group">
+				@Html.LabelFor(model => model.LoginName, new { @class = "control-label" })
+			<div class="controls">
+				@Html.TextBoxFor(model => model.LoginName)
+			</div>
+		</div>
+	
+        <div class="control-group">
+				@Html.LabelFor(model => model.Password, new { @class = "control-label" })
+			<div class="controls">
+				@Html.PasswordFor(model => model.Password)
+			</div>
+		</div>
+	
+        <div class="control-group">
+				@Html.LabelFor(model => model.ConfirmPassword, new { @class = "control-label" })
+        
+			<div class="controls">
+				@Html.PasswordFor(model => model.ConfirmPassword)
+			</div>
+		</div> 
+	
+        <div class="control-group">
+				@Html.LabelFor(model => model.DocumentNumber, new { @class = "control-label" })
+        
+			<div class="controls">
+				@Html.TextBox("DocumentNumber", Model.DocumentNumber == 0 ? "" : Model.DocumentNumber.ToString())
+			</div>
+		</div>
+	
+        <div class="control-group">
+				@Html.LabelFor(model => model.Email, new { @class = "control-label" })
+			<div class="controls">
+				@Html.TextBoxFor(model => model.Email, new { @placeholder = T("View.Common.EmailSample") })
+			</div>
+		</div>
+
+        <div class="control-group">
+        @Html.Label("Roles", new { @class = "control-label" })
+        @foreach (var role in Model.RolesList)
+        {            
+            <div class="controls"> 
+                <label class="checkbox inline">
+                    <input type="checkbox" name="Roles" value="@role.Id" @(role.Checked ? "checked=\"checked\"" : "")/>@role.Name
+                                    </label>           
+            </div>
+        }
+        </div>
+       
+        <div class="control-group">
+				@Html.LabelFor(model => model.LanguageId, new { @class = "control-label" })
+        
+			<div class="controls">
+                @Html.DropDownList("LanguageID", Model.LanguageList, @T("View.Common.Select").Text)
+			</div>
+		</div>
+	
+        <div class="control-group">
+				@Html.LabelFor(model => model.Enabled, new { @class = "control-label" })        
+			<div class="controls">
+				@Html.CheckBoxFor(model => model.Enabled)
+			</div>
+		</div>

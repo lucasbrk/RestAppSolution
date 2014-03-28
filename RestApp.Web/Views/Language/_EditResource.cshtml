@@ -1,0 +1,24 @@
+﻿@model RestApp.Web.Models.Localization.LocaleStringResourceModel
+@Html.ValidationSummary(true)
+<div class="well">
+    @Html.HiddenFor(model => model.Id)
+    <div class="control-group">
+        @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+        <div class="controls">
+            @Html.DisplayTextFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-error" })
+        </div>
+    </div>
+    <div class="control-group">
+        @Html.LabelFor(model => model.Value, new { @class = "control-label" })
+        <div class="controls">
+            @Html.TextAreaFor(model => model.Value)
+            @Html.ValidationMessageFor(model => model.Value, null, new { @class = "text-error" })
+        </div>
+    </div>
+    <div class="controls">
+        <div>
+            <input type="submit" class="btn btn-primary" value="@T("View.Common.Save")" />
+        </div>
+    </div>
+</div>

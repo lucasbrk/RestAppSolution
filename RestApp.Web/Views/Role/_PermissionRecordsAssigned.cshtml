@@ -1,0 +1,30 @@
+﻿@model RestApp.Models.Roles.RoleModel
+
+@{
+    ViewBag.Title = T("View.PermissionRecordsAssignedTo.List").Text + " " + Model.Name;
+    int count;
+}
+@foreach (var category in Model.PermissionRecordsCategory)
+{
+    <h2 class="page-header">@T("PermissionRecords." + category.Category)</h2>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="row-fluid">
+                @foreach (var permission in category.PermissionRecords)
+                {
+                    <div class="span3" style="margin-left: 0px;">
+                        @if (permission.Checked)
+                        {
+                            <label><i class="icon-ok"></i> @permission.Name</label>
+                        }
+                        else
+                        {
+                            <label><i class="icon-remove"></i> @permission.Name</label>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+

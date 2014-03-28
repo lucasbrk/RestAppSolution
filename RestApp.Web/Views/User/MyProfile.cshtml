@@ -1,0 +1,94 @@
+﻿@model RestApp.Web.Models.Users.MyProfileUserModel
+@{
+    ViewBag.Title = T("View.User.Edit");
+}
+<div>
+    <a href="@Url.Action("Index")" class="btn btn-inverse btn-mini"><i class="icon-arrow-left icon-white">
+    </i>@T("View.Common.BackToList").Text</a>
+</div>
+@using (Html.BeginForm("MyProfile", "User", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal" }))
+{
+        @Html.ValidationSummary(true)        
+    <div class="well">
+        <legend>@T("View.User.Edit.Edit"): <b>@Model.Name</b></legend>
+        @Html.HiddenFor(model => model.Id)
+        <div class="control-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-labelObligatory" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-error" })
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.LoginName, new { @class = "control-labelObligatory" })
+            <div class="controls">
+                @Html.EditorFor(model => model.LoginName)
+                @Html.ValidationMessageFor(model => model.LoginName, null, new { @class = "text-error" })
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.CurrentPassword, new { @class = "control-labelObligatory" })
+            <div class="controls">
+                @Html.PasswordFor(model => model.CurrentPassword)
+                @Html.ValidationMessageFor(model => model.CurrentPassword, null, new { @class = "text-error" })
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.NewPassword, new { @class = "control-label" })
+            <div class="controls">
+                @Html.PasswordFor(model => model.NewPassword, new { @placeholder = T("View.User.Edit.NotToChange") })
+                @Html.ValidationMessageFor(model => model.NewPassword, null, new { @class = "text-error" })
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.ConfirmPassword, new { @class = "control-label" })
+            <div class="controls">
+                @Html.PasswordFor(model => model.ConfirmPassword)
+                @Html.ValidationMessageFor(model => model.ConfirmPassword, null, new { @class = "text-error" })
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.DocumentNumber, new { @class = "control-labelObligatory" })
+            <div class="controls">
+                @Html.TextBoxFor(model => model.DocumentNumber)
+                @Html.ValidationMessageFor(model => model.DocumentNumber, null, new { @class = "text-error" })
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.Email, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(model => model.Email, new { @placeholder = T("View.Common.EmailSample") })
+                @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-error" })
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.RolesList, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(model => model.RolesList, new { @readonly = "true" })
+                @Html.ValidationMessageFor(model => model.RolesList, null, new { @class = "text-error" })
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.LanguageId, new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("LanguageID", Model.LanguagesList, @T("View.Common.Select").Text)
+                @Html.ValidationMessageFor(model => model.LanguageId, null, new { @class = "text-error" })
+            </div>
+        </div>
+        <div class="controls">
+            <div>
+                <input type="submit" class="btn btn-primary" value="@T("View.Common.Save")" />
+            </div>
+        </div>
+    </div>
+    <p>
+        <small style="color: Highlight">@T("View.Common.ObligatoryProperty").Text</small>
+    </p>
+}
+<div>
+    <a href="@Url.Action("Index")" class="btn btn-inverse btn-mini"><i class="icon-arrow-left icon-white">
+    </i>@T("View.Common.BackToList").Text</a>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

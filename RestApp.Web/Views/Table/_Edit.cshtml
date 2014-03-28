@@ -1,0 +1,15 @@
+﻿@model RestApp.Web.Models.Tables.TableModel
+@{
+    ViewBag.Title = T("View.Table.Edit");
+}
+
+@using (Html.BeginForm("Edit", "Table", FormMethod.Post, new { @class = "form-horizontal", id = "form" })) 
+{
+    @Html.ValidationSummary(true)
+
+    @Html.Partial("_CreateOrEdit", Model)
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

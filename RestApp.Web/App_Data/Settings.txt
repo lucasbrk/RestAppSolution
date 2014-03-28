@@ -1,0 +1,2 @@
+DataProvider: mysql
+DataConnectionString: Data Source=127.0.0.1;Initial Catalog=RestAppDB;User ID=root;Password=root

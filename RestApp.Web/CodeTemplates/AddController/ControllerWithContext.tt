@@ -1,0 +1,272 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#
+var Model = (MvcTextTemplateHost)Host;
+var routePrefix = String.Empty;
+if (!String.IsNullOrWhiteSpace(Model.AreaName)) {
+    routePrefix = "/" + Model.AreaName;
+}
+routePrefix += "/" + Model.ControllerRootName + "/";
+#>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data.Objects" #>
+<#@ import namespace="System.Linq" #>
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using RestApp.Helpers;
+<# if(MvcTextTemplateHost.NamespaceNeeded(Model.Namespace, Model.ModelType.Namespace)) { #>
+using <#= Model.ModelType.Namespace #>;
+<# } #>
+<# if(Model.ContextType.Namespace != Model.ModelType.Namespace && MvcTextTemplateHost.NamespaceNeeded(Model.Namespace, Model.ContextType.Namespace)) { #>
+using <#= Model.ContextType.Namespace #>;
+<# } #>
+
+namespace <#= Model.Namespace #>
+{
+<#
+    var modelName = Model.ModelType.Name;
+    var entitySetName = Model.EntitySetName;
+    var modelVariable = modelName.ToLower();
+    var entitySetVariable = entitySetName.ToLower();
+    var primaryKey = Model.PrimaryKeys[0];
+    var lambdaVar = modelVariable[0];
+    var isObjectContext = typeof(ObjectContext).IsAssignableFrom(Model.ContextType);
+#>
+    public class <#= Model.ControllerName #> : BaseApController
+    {
+		 #region Fields
+
+        private readonly IPermissionService gPermissionService;
+        private readonly IWorkContext gWorkContext;
+        private readonly ILocalizationService gLocalizationService;
+
+        #endregion
+
+		#region Constructors
+
+        public UserController(IPermissionService permissionService,
+        IWorkContext workContext, ILocalizationService localizationService)
+        { 
+            this.gPermissionService = permissionService;
+            this.gWorkContext = workContext;
+            this.gLocalizationService = localizationService;            
+        }
+
+        #endregion
+
+		#region <#= routePrefix #>
+        
+        public ActionResult Index()
+        {
+            return RedirectToAction("Lista");
+        }
+
+        // GET: /<#= routePrefix #>/
+        public ActionResult Lista()
+        {
+            if (!gPermissionService.Authorize(StandardPermissionProvider.Custom))
+            {
+                return AccessDeniedView();
+            }
+
+            List<List<#= routePrefix #>Model> listModel = new List<List<#= routePrefix #>Model>();
+
+            foreach (var item in g<#= routePrefix #>Service.GetAll<#= routePrefix #>s(true))
+            {
+                listModel.Add(Prepare<#= routePrefix #>ModelForList(item));
+            }
+
+            return View(listModel);
+        }
+
+        // GET: /<#= routePrefix #>/Crear
+        public ActionResult Crear()
+        {
+            if (!gPermissionService.Authorize(StandardPermissionProvider.Custom))
+            {
+                return AccessDeniedView();
+            }
+
+            var item = new Model();
+
+            return View(user);
+        }
+
+        // POST: /<#= routePrefix #>/Crear
+        [HttpPost]
+        public ActionResult Crear(Model model, FormCollection formData) //si tiene checks va formData
+        {
+            if (!gPermissionService.Authorize(StandardPermissionProvider.Custom))
+            {
+                return AccessDeniedView();
+            }
+
+            if (!String.IsNullOrWhiteSpace(model.Custom))
+            {
+                if (gUserService.GetCustomByCustom(model.Custom) != null)
+                {
+                    ModelState.AddModelError("", "Custom is already exist");
+                }
+            }
+
+            if (ModelState.IsValid)
+            {
+                var item = new <#= routePrefix #>()
+                {                   
+                    Enabled = model.Enabled,
+
+                    CreateBy = gWorkContext.CurrentUser.Id,
+                    EditBy = gWorkContext.CurrentUser.Id,
+                    DateCreateOn = DateTime.UtcNow,
+                    DateEditOn = DateTime.UtcNow                    
+                };
+               
+
+                g<#= routePrefix #>Service.Insert<#= routePrefix #>(item);
+
+                SuccessNotification("Added"); // TODO: ver como se usa
+
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
+        }
+
+        // GET: /<#= routePrefix #>/Editar/5
+        public ActionResult Editar(int id = 0)
+        {
+            if (!gPermissionService.Authorize(StandardPermissionProvider.Custom))
+            {
+                return AccessDeniedView();
+            }
+
+            <#= routePrefix #> item = g<#= routePrefix #>Service.Get<#= routePrefix #>ById(id);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+
+            var itemModel = new Model();
+
+            itemModel.Enabled = item.Enabled;            
+
+            return View(itemModel);
+        }
+
+        // POST: /<#= routePrefix #>/Editar/5
+        [HttpPost]
+        public ActionResult Editar(EditUserModel model, FormCollection formData) //si tiene checks
+        {
+            if (!gPermissionService.Authorize(StandardPermissionProvider.Custom))
+            {
+                return AccessDeniedView();
+            }
+
+            var item = g<#= routePrefix #>Service.Get<#= routePrefix #>ById(model.Id);
+
+            if (item == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    if (!String.IsNullOrWhiteSpace(model.Custom))
+                    {
+                        var CustomFound = g<#= routePrefix #>Service.Get<#= routePrefix #>ByCustom(model.Custom);
+                        if (CustomFound != null && CustomFound.Id != model.Id)
+                        {
+                            ModelState.AddModelError("", "Model is already exist");
+                        }                       
+                    }
+
+                    if (ModelState.IsValid)
+                    {                       
+                        item.Enabled = model.Enabled;
+
+                        item.CreateBy = gWorkContext.CurrentUser.Id;
+                        item.EditBy = gWorkContext.CurrentUser.Id;
+                        item.DateCreateOn = DateTime.UtcNow;
+                        item.DateEditOn = DateTime.UtcNow;
+
+                        g<#= routePrefix #>Service.Update<#= routePrefix #>(item);
+
+                        SuccessNotification("Updated"); //TODO: Ver como usar esto
+
+                        return RedirectToAction("Index");
+                    }
+                }
+                catch (Exception exc)
+                {
+                    ModelState.AddModelError("", exc.ToString());
+                }
+            }
+
+            model.RolesList = ConvertToRolesChechListModel(ConvertToListRoles(formData.GetValues("Roles")));
+            ViewBag.AllLanguages = gLanguageService.GetAllLanguages(true);
+
+            return View(model);
+        }
+
+        ////
+        //// GET: /<#= routePrefix #>/Detalles/5
+
+        //public ActionResult Detalles(int id = 0)
+        //{
+        //    User user = db.Users.Find(id);
+        //    if (user == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(user);
+        //} 
+
+        ////
+        //// GET: /<#= routePrefix #>/Borrar/5
+
+        //public ActionResult Borrar(int id = 0)
+        //{
+        //    User user = db.Users.Find(id);
+        //    if (user == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(user);
+        //}
+
+        ////
+        //// POST: /<#= routePrefix #>/Delete/5
+
+        //[HttpPost, ActionName("Delete")]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    User user = db.Users.Find(id);
+        //    db.Users.Remove(user);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
+        #endregion
+
+		#region Utilities
+
+        private ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        #endregion

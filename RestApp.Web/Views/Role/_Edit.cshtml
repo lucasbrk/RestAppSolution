@@ -1,0 +1,16 @@
+﻿@model RestApp.Models.Roles.RoleModel
+
+@{
+    ViewBag.Title = T("View.Role.Edit").Text;
+}
+
+@using (Html.BeginForm("Edit", "Role", FormMethod.Post, new { @class = "form-horizontal" })) {
+    
+    @Html.ValidationSummary(true)
+	
+    @Html.Partial("_CreateOrEdit", Model)    
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

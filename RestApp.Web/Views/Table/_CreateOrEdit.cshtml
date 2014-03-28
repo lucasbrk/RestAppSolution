@@ -1,0 +1,24 @@
+﻿@model RestApp.Web.Models.Tables.TableModel
+
+@Html.HiddenFor(model => model.Id)
+
+<div class="control-group">
+    @Html.LabelFor(model => model.Number, new { @class = "control-label" })
+    <div class="controls">
+        @Html.TextBoxFor(model => model.Number)
+    </div>
+</div>
+
+<div class="control-group">
+    @Html.LabelFor(model => model.Seat, new { @class = "control-label" })
+    <div class="controls">
+        @Html.TextBoxFor(model => model.Seat)
+    </div>
+</div>
+
+<div class="control-group">
+    @Html.LabelFor(model => model.Enabled, new { @class = "control-label" })
+    <div class="controls">
+        @Html.CheckBoxFor(model => model.Enabled)
+    </div>
+</div>

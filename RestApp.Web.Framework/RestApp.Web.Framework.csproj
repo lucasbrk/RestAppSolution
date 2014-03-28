@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8192C285-3B4C-405C-8D2F-D4CD910DE600}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RestApp.Web.Framework</RootNamespace>
+    <AssemblyName>RestApp.Web.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc3.2.6.3.862\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AdminAuthorizeAttribute.cs" />
+    <Compile Include="Controllers\HearderTextAttribute.cs" />
+    <Compile Include="DependencyRegistrar.cs" />
+    <Compile Include="EmbeddedViews\EmbeddedResourceVirtualFile.cs" />
+    <Compile Include="EmbeddedViews\EmbeddedViewMetadata.cs" />
+    <Compile Include="EmbeddedViews\EmbeddedViewResolver.cs" />
+    <Compile Include="EmbeddedViews\EmbeddedViewTable.cs" />
+    <Compile Include="EmbeddedViews\EmbeddedViewVirtualPathProvider.cs" />
+    <Compile Include="EmbeddedViews\IEmbeddedViewResolver.cs" />
+    <Compile Include="Localization\ILocalizedModel.cs" />
+    <Compile Include="Localization\ILocalizedModelLocal.cs" />
+    <Compile Include="Localization\LocalizedRoute.cs" />
+    <Compile Include="Localization\LocalizedRouteExtensions.cs" />
+    <Compile Include="Localization\LocalizedString.cs" />
+    <Compile Include="Localization\LocalizedUrlExtenstions.cs" />
+    <Compile Include="Localization\Localizer.cs" />
+    <Compile Include="Mvc\BaseApModel.cs" />
+    <Compile Include="Mvc\ApDependencyResolver.cs" />
+    <Compile Include="Mvc\ApModelBinder.cs" />
+    <Compile Include="Mvc\ApMetadataProvider.cs" />
+    <Compile Include="Mvc\IModelAttribute.cs" />
+    <Compile Include="Mvc\Routes\IRouteProvider.cs" />
+    <Compile Include="Mvc\Routes\IRoutePublisher.cs" />
+    <Compile Include="Mvc\Routes\RoutePublisher.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestAppResourceDisplayName.cs" />
+    <Compile Include="Security\AdminValidateIpAddressAttribute.cs" />
+    <Compile Include="Security\FilePermissionHelper.cs" />
+    <Compile Include="Security\ApHttpsRequirementAttribute.cs" />
+    <Compile Include="Security\SslRequirement.cs" />
+    <Compile Include="UI\NotifyType.cs" />
+    <Compile Include="ViewEngine\Razor\WebViewPage.cs" />
+    <Compile Include="WebWorkContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RestApp.Common\RestApp.Common.csproj">
+      <Project>{11A5B688-BF22-44F3-8AD7-82E07A6EE137}</Project>
+      <Name>RestApp.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RestApp.Core\RestApp.Core.csproj">
+      <Project>{263ABEAD-DF93-4CBC-B283-AA232BCD7DF6}</Project>
+      <Name>RestApp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RestApp.Data\RestApp.Data.csproj">
+      <Project>{52135862-21FC-464F-B97E-76F011EF27ED}</Project>
+      <Name>RestApp.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RestApp.Services\RestApp.Services.csproj">
+      <Project>{5f9c21c4-fa65-403f-937f-6601cfb9985e}</Project>
+      <Name>RestApp.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<RestApp.Web.Models.Localization.ListLanguageModel>
+@{
+    ViewBag.Title = T("View.Configuration.Language.List").Text;
+    int num = 1;
+}
+
+<div class="controls" style="margin: 20px 0">
+    @Html.ActionLink(T("View.Common.AddNew").Text, "Create", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink(T("View.Common.ExportToExcel").Text, "ExportToExcel", new { q = Request.QueryString["q"] }, new { @class = "btn btn-primary" })
+    @using (Html.BeginForm("List", "Language", FormMethod.Get, new { @style = "float: right;" }))
+    {
+        <form class="form-search">
+        @Html.TextBox("q", null, new { @class = "input-medium search-query", @placeholder = T("View.Common.Search") })
+        <button type="submit" class="btn">
+            @T("View.Common.SubmitSearch")</button>
+        </form>
+    }
+</div>
+<div id="table_wrapper" class="dataTables_wrapper form-inline" role="grid">
+    <table class="table table-striped table-condensed table-bordered dataTable" id="tableList">
+        <thead>
+            <tr>
+                <th style="width: 0px;">
+                    #
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LanguageCulture)
+                </th>
+                <th style="width: 0px;">
+                    @Html.DisplayNameFor(model => model.Enabled)
+                </th>
+                <th style="width: 0px;">@T("View.Common.Options")
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @num
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LanguageCulture)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Enabled)
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            @Html.ActionLink(T("View.Configuration.Language.ViewLocaleStringResources").Text, "Resources", new { id = item.Id }, new { @class = "btn btn-mini btn-success" })
+                            @Html.ActionLink(T("View.Common.Edit").Text, "Edit", new { id = item.Id }, new { @class = "btn btn-mini" }))
+                            @Html.ActionLink(T("View.Common.Delete").Text, null, null, new { @class = "btn btn-mini btn-danger", onclick = "confirmDelete('" + item.Id.ToString() + "', '" + item.Name + "', '')", data_toggle = "modal", href = "#confirm" })
+                        </div>
+                    </td>
+                </tr>
+                num++;
+            }
+        </tbody>
+    </table>
+</div>
+
+@Html.Partial("_DeleteConfimation")

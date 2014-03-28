@@ -1,0 +1,40 @@
+﻿@model RestApp.Models.Roles.RoleModel
+
+@Html.HiddenFor(model => model.Id)
+
+<div class="control-group">
+    @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+    <div class="controls">
+        @Html.EditorFor(model => model.Name)
+    </div>
+</div>
+
+<div class="control-group">
+    @Html.LabelFor(model => model.Description, new { @class = "control-label" })
+    <div class="controls">
+        @Html.EditorFor(model => model.Description)
+    </div>
+</div>
+
+<div class="control-group">
+    @Html.LabelFor(model => model.Enabled, new { @class = "control-label" })
+    <div class="controls">
+        @Html.EditorFor(model => model.Enabled)
+    </div>
+</div>
+
+<div class="control-group">
+    @Html.Label(@T("PermissionRecords").Text, new { @class = "control-label" })
+    @foreach (var category in Model.PermissionRecordsCategory)
+    {            
+        <div class="controls">
+            <legend>@T("PermissionRecords." + category.Category)</legend>
+            @foreach (var permission in category.PermissionRecords)
+            {
+                <label class="checkbox inline">
+                    <input type="checkbox" name="Permissions" value="@permission.Id" @(permission.Checked ? "checked=\"checked\"" : "")/>@T("PermissionRecords." + category.Category + "." + permission.Name)
+                </label>
+            }
+        </div>
+    }
+</div>

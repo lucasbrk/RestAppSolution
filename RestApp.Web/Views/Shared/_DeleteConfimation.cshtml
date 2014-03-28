@@ -1,0 +1,29 @@
+﻿<script type="text/javascript">
+    function confirmDelete(Id, Name, option) {
+        $("#confirm .modal-body").val(Id);
+        var removeBtn = $('#btnYes');
+        removeBtn.attr('href', option + 'Delete/' + Id);
+
+        $("#name").text(Name);
+
+        $("#confirm").modal();
+    }
+</script>
+
+<div class="modal hide fade" id="confirm">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">
+            ×</button>
+        <h3>
+            @T("View.Common.ConfirmDelete")</h3>
+    </div>
+    <div class="modal-body">
+        <p><span>@T("View.Common.MessageDelete").Text</span>
+        <b><span id="name"></span></b>
+        <span>@T("View.Common.QuestionMessageDelete").Text</span></p>
+    </div>
+    <div class="modal-footer">
+        @Html.ActionLink(T("View.Common.Yes").Text, null, null, new { @class = "btn btn-primary", id = "btnYes" })
+        @Html.ActionLink(T("View.Common.No").Text, null, null, new { @class = "btn", data_dismiss = "modal" })
+    </div>
+</div>
