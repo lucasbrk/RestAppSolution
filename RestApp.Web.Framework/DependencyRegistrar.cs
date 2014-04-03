@@ -28,6 +28,7 @@ using RestApp.Common.Utility;
 using RestApp.Services.Installation;
 using RestApp.Services.Roles;
 using RestApp.Services.Tables;
+using RestApp.Services.ItemCategorys;
 
 namespace RestApp.Web.Framework
 {
@@ -102,6 +103,7 @@ namespace RestApp.Web.Framework
             builder.RegisterType<UserService>().As<IUserService>().InstancePerHttpRequest();
             builder.RegisterType<RoleService>().As<IRoleService>().InstancePerHttpRequest();        
             builder.RegisterType<TableService>().As<ITableService>().InstancePerHttpRequest();
+            builder.RegisterType<ItemCategoryService>().As<IItemCategoryService>().InstancePerHttpRequest();
 
             //pass MemoryCacheManager to SettingService as cacheManager (cache settngs between requests)
             builder.RegisterType<PermissionService>().As<IPermissionService>()

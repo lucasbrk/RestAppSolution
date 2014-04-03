@@ -74,6 +74,7 @@
     <Compile Include="IDbContext.cs" />
     <Compile Include="IEfDataProvider.cs" />
     <Compile Include="Initializers\CreateTablesIfNotExist.cs" />
+    <Compile Include="Mapping\ItemsCategories\ItemCategoryMap.cs" />
     <Compile Include="Mapping\Tables\TableMap.cs" />
     <Compile Include="Mapping\Configuration\SettingMap.cs" />
     <Compile Include="Mapping\Localization\LanguajeMap.cs" />

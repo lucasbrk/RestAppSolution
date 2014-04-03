@@ -85,6 +85,7 @@
     <Compile Include="Data\IDataProvider.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\Orderable.cs" />
+    <Compile Include="Domain\ItemsCategories\ItemCategory.cs" />
     <Compile Include="Domain\Tables\Table.cs">
       <SubType>Code</SubType>
     </Compile>

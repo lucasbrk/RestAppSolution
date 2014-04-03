@@ -13,6 +13,7 @@ namespace RestApp.Services.Security
         public static readonly PermissionRecord ManageUsers = new PermissionRecord { Name = "ManageUsers", Category = "Administration" };
         public static readonly PermissionRecord ManageChangePasswordsAndPermissions = new PermissionRecord { Name = "ManageChangePasswordsAndPermissions", Category = "Administration" };
         public static readonly PermissionRecord ManageTables = new PermissionRecord { Name = "ManageTables", Category = "Administration" };
+        public static readonly PermissionRecord ManageItemsCategories = new PermissionRecord { Name = "ManageItemsCategories", Category = "Administration" };
         public static readonly PermissionRecord ManageSystemLogs = new PermissionRecord { Name = "ManageSystemLogs", Category = "Administration" };
         public static readonly PermissionRecord ManageLanguages = new PermissionRecord { Name = "ManageLanguages", Category = "Administration" };
 
@@ -25,6 +26,7 @@ namespace RestApp.Services.Security
                 ManageUsers,
                 ManageChangePasswordsAndPermissions,
                 ManageTables,
+                ManageItemsCategories,
                 ManageSystemLogs,
                 ManageLanguages
             };
@@ -44,6 +46,7 @@ namespace RestApp.Services.Security
                         ManageUsers,
                         ManageChangePasswordsAndPermissions,
                         ManageTables,
+                        ManageItemsCategories,
                         ManageSystemLogs,
                         ManageLanguages
                     }

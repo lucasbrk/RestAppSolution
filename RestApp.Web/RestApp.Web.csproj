@@ -206,6 +206,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdministrationController.cs" />
+    <Compile Include="Controllers\ItemCategoryController.cs" />
     <Compile Include="Controllers\TableController.cs" />
     <Compile Include="Controllers\BaseApController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
@@ -232,6 +233,7 @@
     <Compile Include="Models\AuthorizeActivityAttribute.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\ItemsCategories\ItemcategoryModel.cs" />
     <Compile Include="Models\Tables\TableModel.cs" />
     <Compile Include="Models\Install\InstallModel.cs" />
     <Compile Include="Models\Localization\LanguageModel.cs" />
@@ -453,6 +455,10 @@
     <Content Include="Views\Table\_Create.cshtml" />
     <Content Include="Views\Table\_Edit.cshtml" />
     <Content Include="Views\Shared\_CreateAndEditModal.cshtml" />
+    <Content Include="Views\ItemCategory\_Create.cshtml" />
+    <Content Include="Views\ItemCategory\_CreateOrEdit.cshtml" />
+    <Content Include="Views\ItemCategory\_Edit.cshtml" />
+    <Content Include="Views\ItemCategory\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RestApp.Common\RestApp.Common.csproj">

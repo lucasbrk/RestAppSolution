@@ -60,6 +60,8 @@
   <ItemGroup>
     <Compile Include="Authentication\FormsAuthenticationService.cs" />
     <Compile Include="Authentication\IAuthenticationService.cs" />
+    <Compile Include="ItemsCategories\IItemCategoryService.cs" />
+    <Compile Include="ItemsCategories\ItemCategoryService.cs" />
     <Compile Include="Tables\TableService.cs" />
     <Compile Include="Tables\ITableService.cs" />
     <Compile Include="Configuration\ConfigurationProvider.cs" />
