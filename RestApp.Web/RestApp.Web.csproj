@@ -459,6 +459,7 @@
     <Content Include="Views\ItemCategory\_CreateOrEdit.cshtml" />
     <Content Include="Views\ItemCategory\_Edit.cshtml" />
     <Content Include="Views\ItemCategory\List.cshtml" />
+    <None Include="Properties\PublishProfiles\RestApp.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RestApp.Common\RestApp.Common.csproj">

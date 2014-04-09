@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/basic")
+    @Styles.Render("~/Content/shortcuts")
+
+    @Scripts.Render("~/bundles/basic")
+
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+        @Html.Partial("_NavBar")
+
+        @Html.Partial("_subNavBar")
+
+        @if (Request.IsAuthenticated)
+        {
+            
+        }
+        <div class="main">
+            <div class="main-inner">
+                <div class="container">
+                    <div class="row">
+                        @Html.Partial("_shortcuts")
+
+                        @RenderSection("featured", required: false)
+
+                        @Html.Partial("_Notifications")
+
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     @*@Html.Partial("_extra")
+
+    @Html.Partial("_footer")*@
+</body>
+   
+</html>
+
+
+<script type="text/javascript">
+
+</script>

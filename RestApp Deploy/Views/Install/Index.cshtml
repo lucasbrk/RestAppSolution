@@ -1,0 +1,203 @@
+﻿@model RestApp.Web.Models.Install.InstallModel
+@using RestApp.Core.Infrastructure;
+@using RestApp.Web.Models.Install;
+@using RestApp.Web.Infrastructure.Installation;
+@{
+    //localizatrion service for installation service
+    //we do not use standart nopCommerce localization because database is not installed yet
+    //locale resources fpr installation process are stored into \App_Data\Localization\Installation directory
+    var ILS = EngineContext.Current.Resolve<IInstallationLocalizationService>();
+    Layout = "../Shared/_LayoutInstallation.cshtml";
+}
+
+<h1>@ILS.GetResource("Title")</h1>
+@using (Html.BeginForm("Index", "Install", System.Web.Mvc.FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary(true)
+
+    @ILS.GetResource("Tooltip2")
+
+   <h3>@ILS.GetResource("InitialInformation")</h3>
+
+        
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.Label(ILS.GetResource("AdminLoginName"), new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    @Html.TextBoxFor(x => x.AdminLoginName, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label(ILS.GetResource("AdminPassword"), new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    @Html.PasswordFor(x => x.AdminPassword, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label(ILS.GetResource("ConfirmPassword"), new { @class = "col-md-4 control-label" })
+                <div class="col-md-8">
+                    @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <h3>@ILS.GetResource("DatabaseInformation")</h3>
+
+
+            <h4>Configuración de MySQL Server</h4>
+    
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBoxFor(x => x.MySqlServerCreateDatabase)
+                        @ILS.GetResource("CreateDatabaseIfDoesNotExist")
+                    </label>
+                </div>
+                <div class="checkbox">
+
+                    <label>
+                        @Html.CheckBoxFor(x => x.InstallTestData)
+                        @ILS.GetResource("InstallTestData")
+                    </label>
+                </div>
+                <br />
+                <div class="radio">
+                    <label>
+                        @Html.RadioButton("MySqlConnectionInfo", "sqlconnectioninfo_values", (Model.MySqlConnectionInfo == "sqlconnectioninfo_values"), new { id = "sqlconnectioninfo_values", onclick = "toggleSqlConnectionInfo(this)" })
+                        @ILS.GetResource("ConnectionStringValues")
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        @Html.RadioButton("MySqlConnectionInfo", "sqlconnectioninfo_raw", (Model.MySqlConnectionInfo == "sqlconnectioninfo_raw"), new { id = "sqlconnectioninfo_raw", onclick = "toggleSqlConnectionInfo(this)" })
+                        @ILS.GetResource("RawConnectionString")
+                    </label>
+                </div>
+                <br />
+
+                <div id="sqlDatabaseInfo" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.Label("Nombre de MySQL server", new { @class = "col-md-4 control-label" })
+                                <div class="col-md-8">
+                                    @Html.TextBoxFor(x => x.MySqlServerName, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label(ILS.GetResource("DatabaseName"), new { @class = "col-md-4 control-label" })
+                                <div class="col-md-8">
+                                    @Html.TextBoxFor(x => x.MySqlDatabaseName, new { @class = "form-control" })
+                                </div>
+                            </div>
+
+                        <div class="form-group">
+                            @Html.Label("Nombre de usuario MySQL", new { @class = "col-md-4 control-label" })
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(x => x.MySqlUsername, new { @class = "form-control" })
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            @Html.Label("Contraseña de MySQL server", new { @class = "col-md-4 control-label" })
+                            <div class="col-md-8">
+                                @Html.PasswordFor(x => x.MySqlPassword, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sqlDatabaseConnectionString">
+                    <div class="form-group">
+                        @Html.Label(ILS.GetResource("ConnectionString"), new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(x => x.MySqlDatabaseConnectionString, new { @class = "form-control", @placeholder = " Data Source=sqlServerName;Initial Catalog=dbName;Persist Security Info=True;UserID=userName;Password=password" })
+                            <p>
+                                <small>@ILS.GetResource("Example"): Server=localhost;Database=myDataBase;Uid=myUser;Pwd=myPassword;</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+    
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBoxFor(x => x.UseCustomCollation)
+                        Especificar la intercalación de MySQL server personalizada
+                    </label>
+                </div>
+    <br />
+        <div id="Collation" style="display:none;">
+                
+
+                <div class="form-group">
+                        @Html.TextBoxFor(x => x.Collation, new { @class="form-control" })
+                    </div>
+            <br />
+</div>
+    
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <input type="submit" value="@ILS.GetResource("Install")" class="btn btn-default" />
+    </div>
+        </div>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input[name=MySqlConnectionInfo]').change(function () {
+            toggleSqlConnectionInfo(this);
+        });
+    });
+
+    $(document).ready(function () {
+        $('#UseCustomCollation').click(function () {
+            toggleCollation(this);
+        });
+    });
+
+    function toggleSqlConnectionInfo(elem) {
+        var selectedConnectionInfo = $(elem).attr('id');
+
+        if (selectedConnectionInfo == 'sqlconnectioninfo_values') {
+            $('#sqlDatabaseInfo').show('slow');
+            $('#sqlDatabaseConnectionString').hide('slow');
+        }
+        else if (selectedConnectionInfo == 'sqlconnectioninfo_raw') {
+            $('#sqlDatabaseInfo').hide('slow');
+            $('#sqlDatabaseConnectionString').show('slow');
+        }
+    }
+
+    function toggleCollation(elem) {
+        if ($(elem).is(':checked')) {
+            $('#Collation').show('slow');
+        }
+        else {
+            $('#Collation').hide('slow');
+        }
+    }
+
+    $("form").on("submit", function () {
+        $.blockUI({
+            message: $('#displayBox').removeAttr('style'),
+            css: {
+                top: ($(window).height() - 100) / 2 + 'px',
+                left: ($(window).width() - 400) / 2 + 'px',
+                width: '400px',
+                height: '20px',
+                border: 'none',
+                padding: '5px',
+                backgroundColor: '#000',
+                'border-radius': '4px',
+                opacity: .5,
+                color: '#fff'
+            }
+        });
+    });
+</script>

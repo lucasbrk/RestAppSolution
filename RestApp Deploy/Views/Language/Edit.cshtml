@@ -1,0 +1,57 @@
+﻿@model RestApp.Web.Models.Localization.LanguageModel
+
+@{
+    ViewBag.Title = T("View.Configuration.Language.Edit");
+}
+
+<legend>@T("View.Configuration.Language.Edit.Edit"): <b>@Model.Name</b></legend>
+
+<div>
+    <a href="@Url.Action("Index")" class="btn btn-inverse btn-mini"><i class="icon-arrow-left icon-white"></i> @T("View.Common.BackToList").Text</a> 
+</div>
+
+@using (Html.BeginForm("Edit", "Language", FormMethod.Post, new { @class = "form-horizontal" })) {
+    @Html.ValidationSummary(true)
+	<div class="well">
+
+        @Html.HiddenFor(model => model.Id)
+
+		<div class="control-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+
+			<div class="controls">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-error" })
+			</div>
+		</div>
+		<div class="control-group">
+            @Html.LabelFor(model => model.LanguageCulture, new { @class = "control-label" })
+
+			<div class="controls">
+            @Html.DropDownList("LanguageCulture", Model.LanguagesCultureList, @T("View.Common.Select").Text)	
+            @Html.ValidationMessageFor(model => model.LanguageCulture, null, new { @class = "text-error" })
+			</div>
+		</div>
+		<div class="control-group">
+            @Html.LabelFor(model => model.Enabled, new { @class = "control-label" })
+
+			<div class="controls">
+            @Html.EditorFor(model => model.Enabled)
+            @Html.ValidationMessageFor(model => model.Enabled, null, new { @class = "text-error" })
+			</div>
+		</div>
+       <div class="controls">
+			<div>
+				<input type="submit" class="btn btn-primary" value="@T("View.Common.Save")" />
+			</div>
+		</div>
+	</div>
+}
+
+<div>
+    <a href="@Url.Action("Index")" class="btn btn-inverse btn-mini"><i class="icon-arrow-left icon-white"></i> @T("View.Common.BackToList").Text</a> 
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

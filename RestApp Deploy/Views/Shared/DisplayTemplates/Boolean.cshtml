@@ -1,0 +1,12 @@
+﻿@model Nullable<System.Boolean>
+@if (Model.HasValue)
+{
+    if (Model.Value)
+    {
+        <div style="text-align: center;"><span class="badge badge-success"><i class="icon-ok"></i></span></div>
+    }
+    else
+    {
+        <div style="text-align: center;"><span class="badge badge-error"><i class="icon-remove"></i></span></div>
+    }
+}

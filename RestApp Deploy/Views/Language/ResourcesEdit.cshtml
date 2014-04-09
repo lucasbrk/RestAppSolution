@@ -1,0 +1,15 @@
+﻿@model RestApp.Web.Models.Localization.LocaleStringResourceModel
+
+@{
+    ViewBag.Title = T("View.Configuration.Language.LocaleStringResource.Edit");
+}
+
+<legend>@T("View.Configuration.Language.LocaleStringResources.Edit.Edit"): <b>@Model.Name</b></legend>
+
+@using (Html.BeginForm("ResourcesEdit", "Language", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.ValidationSummary(true)
+    <text>
+    @{Html.RenderPartial("_EditResource", Model);}
+    </text>
+}

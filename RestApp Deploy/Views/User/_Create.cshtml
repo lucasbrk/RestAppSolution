@@ -1,0 +1,17 @@
+﻿@model RestApp.Web.Models.Users.NewUserModel
+
+@{
+    ViewBag.Title = T("View.User.Create").Text;
+}
+
+@using (Html.BeginForm("Create", "User", FormMethod.Post, new { @class = "form-horizontal" })) 
+{
+    @Html.ValidationSummary(true)
+
+    @Html.Partial("_CreateUser", Model)
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

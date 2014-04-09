@@ -1,0 +1,51 @@
+﻿@model RestApp.Web.Models.Users.EditUserModel
+
+
+        @Html.HiddenFor(model => model.Id)
+        <div class="control-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Name)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.LoginName, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.LoginName)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.DocumentNumber, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(model => model.DocumentNumber)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.Email, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(model => model.Email, new { @placeholder = T("View.Common.EmailSample") })
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.Label("Roles", new { @class = "control-label" })
+            @foreach (var role in Model.RolesList)
+            {            
+                <div class="controls">
+                    <label class="checkbox inline">
+                        <input type="checkbox" name="Roles" value="@role.Id" @(role.Checked ? "checked=\"checked\"" : "")/>@role.Name
+                    </label>
+                </div>
+            }
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.LanguageId, new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("LanguageID", Model.LanguageList, @T("View.Common.Select").Text)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(model => model.Enabled, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Enabled)
+            </div>
+        </div>

@@ -1,0 +1,139 @@
+﻿@model IEnumerable<RestApp.Web.Models.Users.ListUserModel>
+@{
+    Layout = "~/Views/Shared/_LayoutForAdministration.cshtml";
+    ViewBag.Title = T("View.User.List").Text;
+    int num = 1;
+}
+
+<div class="span12">
+    <div class="btn-toolbar">
+        <button id="btnAdd" class="btn btn-mini"><i class="icon-plus"></i> New</button>
+    </div>
+
+    <div class="widget widget-table action-table">
+        <div class="widget-header">
+            <i class="icon-th-list"></i>
+            <h3>A Table Example</h3>
+        </div>
+        <!-- /widget-header -->
+        <div class="widget-content">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th># </th>
+                        <th>Name</th>
+                        <th>LoginName</th>
+                        <th>Rol</th>
+                        <th>Email</th>
+                        <th>Enabled</th>
+                        <th class="td-actions"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @num
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LoginName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Roles)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Enabled)
+                            </td>
+                            <td class="td-actions">
+                                <button id="btnEdit_@item.Id" class="btn btn-small btnEdit" value="@item.Id"><i class="btn-icon-only  icon-edit"></i></button>
+                                <button onclick = "javascript:confirmDelete('@item.Id.ToString()', '@item.Name', '')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"></i></button>
+                            </td>
+                        </tr>
+                        num++;
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /widget-content -->
+    </div>
+</div>
+
+@Html.Partial("_DeleteConfimation")
+
+<div id="CreateAndEditUserModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">User</h3>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button id="btnSubmit" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnAdd").on("click", function () {
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("Create", "User")',
+                data: null
+            })
+          .done(function (result) {
+              $("#CreateAndEditUserModal .modal-body").html(result);
+              $('#btnSubmit').attr("value", "Create");
+              $("#CreateAndEditUserModal").modal();
+          });
+        });
+
+        $("#btnSubmit").on("click", function () {
+            $.ajax({
+                type: "POST",
+                url: GetUrl($(this)), 
+                data: $("form").serialize()
+            })
+          .done(function () {
+              $("#CreateAndEditUserModal").modal();
+              location.reload(true);
+          })
+          .fail(function () {
+              alert("Error!");
+            });
+        });
+
+        $(".btnEdit").on("click", function () {
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("Edit", "User")',
+                data: { 'id': $(this).val() }
+            })
+          .done(function (result) {
+              $("#CreateAndEditUserModal .modal-body").html(result);
+              $('#btnSubmit').attr("value", "Edit");
+              $("#CreateAndEditUserModal").modal();
+          });
+        });
+    });
+
+    function GetUrl(elem) {
+        var link;
+        if (elem.val() == "Create") {
+            return '@Url.Action("Create", "User")';
+        }
+        else if(elem.val() == "Edit"){
+            return '@Url.Action("Edit", "User")';
+        }
+        else{
+            alert("Error in Action name");
+        }
+    }
+</script>

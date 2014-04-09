@@ -1,0 +1,7 @@
+﻿@{
+    ViewBag.Title = T("View.Common.AccessDenied").Text;
+}
+<div class="alert alert-error" style="margin-top: 20px">
+    @T("View.Common.AccessDenied.Message")
+    @Html.ActionLink(@T("View.Common.Start").Text, "Index", "Home", null, new { @class = "btn btn-inverse" })
+</div>

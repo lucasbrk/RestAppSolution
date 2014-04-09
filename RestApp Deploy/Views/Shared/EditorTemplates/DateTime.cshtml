@@ -1,0 +1,76 @@
+﻿@model Nullable<System.DateTime>
+@if ( Model.HasValue && Model.Value != DateTime.MinValue) {
+   @Html.TextBox( "" , String.Format( "{0:dd/MM/yyyy}" , Model.Value ))
+}
+else {
+   @Html.TextBox( "" , String.Format( "{0:dd/MM/yyyy}" , DateTime.Now ))
+}
+
+@{
+string name = ViewData.TemplateInfo.HtmlFieldPrefix;
+string id = name.Replace( ".", "_" );
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#@id").datepicker
+            ({
+                changeMonth: true,
+                changeYear: true,
+                dateFormat: 'dd/mm/yy',
+                showStatus: true,
+                showWeeks: true,
+                highlightWeek: true,
+                numberOfMonths: 1,
+                showAnim: "fold",
+                showOptions: {
+                    origin: ["top", "left"]
+                },
+//                @*monthNames: ['@T("View.Common.Month.January").Text',
+//                             '@T("View.Common.Month.February").Text',
+//                             '@T("View.Common.Month.March").Text',
+//                             '@T("View.Common.Month.April").Text',
+//                             '@T("View.Common.Month.May").Text', 
+//                             '@T("View.Common.Month.June").Text', 
+//                             '@T("View.Common.Month.July").Text', 
+//                             '@T("View.Common.Month.August").Text', 
+//                             '@T("View.Common.Month.September").Text',
+//                             '@T("View.Common.Month.October").Text', 
+//                             '@T("View.Common.Month.November").Text', 
+//                             '@T("View.Common.Month.December").Text'],
+//                dayNames: ['@T("View.Common.Day.Monday").Text',
+//                           '@T("View.Common.Day.Tuesday").Text',
+//                           '@T("View.Common.Day.Wednesday").Text',
+//                           '@T("View.Common.Day.Thursday").Text',
+//                           '@T("View.Common.Day.Friday").Text', 
+//                           '@T("View.Common.Day.Saturday").Text',
+//                           '@T("View.Common.Day.Sunday").Text'],
+//                dayNamesShort: ['@T("View.Common.Day.Mon").Text',
+//                                '@T("View.Common.Day.Tue").Text',
+//                                '@T("View.Common.Day.Wed").Text',
+//                                '@T("View.Common.Day.Thu").Text',
+//                                '@T("View.Common.Day.Fri").Text', 
+//                                '@T("View.Common.Day.Sat").Text',
+//                                '@T("View.Common.Day.Sun").Text'],*@
+                monthNamesShort: ['@T("View.Common.Month.Jan").Text',
+                                  '@T("View.Common.Month.Feb").Text',
+                                  '@T("View.Common.Month.Mar").Text',
+                                  '@T("View.Common.Month.Apr").Text',
+                                  '@T("View.Common.Month.May").Text', 
+                                  '@T("View.Common.Month.Jun").Text', 
+                                  '@T("View.Common.Month.Jul").Text', 
+                                  '@T("View.Common.Month.Aug").Text', 
+                                  '@T("View.Common.Month.Sep").Text',
+                                  '@T("View.Common.Month.Oct").Text', 
+                                  '@T("View.Common.Month.Nov").Text', 
+                                  '@T("View.Common.Month.Dec").Text'],     
+                dayNamesMin: ['@T("View.Common.Day.Mo").Text',
+                              '@T("View.Common.Day.Tu").Text',
+                              '@T("View.Common.Day.We").Text',
+                              '@T("View.Common.Day.Th").Text',
+                              '@T("View.Common.Day.Fr").Text', 
+                              '@T("View.Common.Day.Sa").Text',
+                              '@T("View.Common.Day.Su").Text'],
+                weekHeader: '@T("View.Common.Week.Wk").Text'
+            });
+    });
+</script>

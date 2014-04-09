@@ -1,0 +1,16 @@
+﻿@model RestApp.Web.Models.Users.EditUserModel
+@{
+    ViewBag.Title = T("View.User.Edit").Text;
+}
+
+@using (Html.BeginForm("Edit", "User", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+   @Html.ValidationSummary(true)
+   @Html.Hidden("Action", null, new { value = ViewBag.Action })
+
+    @Html.Partial("_EditUser", Model)
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

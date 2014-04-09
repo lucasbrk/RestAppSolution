@@ -1,0 +1,1419 @@
+﻿<Language Name="Español">
+
+  <LocaleResource Name="Model">
+    <Children>
+      <LocaleResource Name="Bank">
+        <Value>Banco</Value>
+        <Children>
+          <LocaleResource Name="Name">
+            <Value>Nombre</Value>
+          </LocaleResource>
+          <LocaleResource Name="Code">
+            <Value>Código</Value>
+          </LocaleResource>
+          <LocaleResource Name="Account">
+            <Value>Cuenta Bancaria</Value>
+          </LocaleResource>
+          <LocaleResource Name="Enabled">
+            <Value>Habilitado</Value>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+     
+      <LocaleResource Name="User">
+        <Value>Usuario</Value>
+        <Children>
+          <LocaleResource Name="Login">
+            <Value>Login</Value>
+            <Children>
+              <LocaleResource Name="LoginName">
+                <Value>Nombre de usuario</Value>
+              </LocaleResource>
+              <LocaleResource Name="Password">
+                <Value>Contraseña</Value>
+              </LocaleResource>
+              <LocaleResource Name="RememberMe">
+                <Value>Recordarme</Value>
+              </LocaleResource>
+              <LocaleResource Name="LoginForm">
+                <Value>Formulario de acceso</Value>
+              </LocaleResource>
+              <LocaleResource Name="LoginError">
+                <Value>El Nombre de Usuario y/o la Contraseña no son correctos</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Name">
+            <Value>Nombre</Value>
+          </LocaleResource>
+          <LocaleResource Name="ConfirmPassword">
+            <Value>Confirmar Contraseña</Value>
+          </LocaleResource>
+          <LocaleResource Name="NewPassword">
+            <Value>Contraseña nueva</Value>
+          </LocaleResource>
+          <LocaleResource Name="CurrentPassword">
+            <Value>Contraseña actual</Value>
+          </LocaleResource>
+          <LocaleResource Name="Password">
+            <Value>Contraseña</Value>
+          </LocaleResource>
+          <LocaleResource Name="DocumentNumber">
+            <Value>Nro. de documento</Value>
+          </LocaleResource>
+          <LocaleResource Name="Enabled">
+            <Value>Habilitado</Value>
+          </LocaleResource>
+          <LocaleResource Name="Email">
+            <Value>e-mail</Value>
+          </LocaleResource>
+          <LocaleResource Name="Roles">
+            <Value>Roles asignados</Value>
+          </LocaleResource>
+          <LocaleResource Name="Language">
+            <Value>Idioma</Value>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Role">
+        <Value>Rol</Value>
+        <Children>
+          <LocaleResource Name="Name">
+            <Value>Nombre</Value>
+          </LocaleResource>
+          <LocaleResource Name="Description">
+            <Value>Descripción</Value>
+          </LocaleResource>
+          <LocaleResource Name="PermissionRecords">
+            <Value>Permisos registrados</Value>
+          </LocaleResource>
+          <LocaleResource Name="PermissionRecordsCategory">
+            <Value>Categoria de permisos</Value>
+          </LocaleResource>
+          <LocaleResource Name="Enabled">
+            <Value>Habilitado</Value>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+     
+      <LocaleResource Name="Configuration">
+        <Value>Configuración</Value>
+        <Children>
+          <LocaleResource Name="Language">
+            <Value>Idioma</Value>
+            <Children>
+              <LocaleResource Name="Languages">
+                <Value>Idiomas</Value>
+              </LocaleResource>
+              <LocaleResource Name="LanguageCulture">
+                <Value>Referencia cultural</Value>
+              </LocaleResource>
+              <LocaleResource Name="Name">
+                <Value>Nombre</Value>
+              </LocaleResource>
+              <LocaleResource Name="Enabled">
+                <Value>Habilitado</Value>
+              </LocaleResource>
+              <LocaleResource Name="Resource">
+                <Value>Recurcursos</Value>
+                <Children>
+                  <LocaleResource Name="Name">
+                    <Value>Nombre</Value>
+                  </LocaleResource>
+                  <LocaleResource Name="Value">
+                    <Value>Valor</Value>
+                  </LocaleResource>
+                  <LocaleResource Name="Language">
+                    <Value>Idioma</Value>
+                  </LocaleResource>
+                </Children>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+    </Children>
+  </LocaleResource>
+
+  <LocaleResource Name="View">
+    <Children>
+      <LocaleResource Name="User">
+        <Value>Usuario</Value>
+        <Children>
+          <LocaleResource Name="Login">
+            <Value>Acceso</Value>
+            <Children>
+              <LocaleResource Name="LoginForm">
+                <Value>Formulario de acceso</Value>
+              </LocaleResource>
+              <LocaleResource Name="Login">
+                <Value>ACCESO</Value>
+              </LocaleResource>
+              <LocaleResource Name="LoginName">
+                <Value>Nombre de Usuario</Value>
+              </LocaleResource>
+              <LocaleResource Name="Password">
+                <Value>Contraseña</Value>
+              </LocaleResource>
+              <LocaleResource Name="LoginAccess">
+                <Value>Entrar</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Users">
+            <Value>Usuarios</Value>
+          </LocaleResource>
+          <LocaleResource Name="ChangePasswordAndPermission">
+            <Value>Cambio Contraseña y Roles</Value>
+          </LocaleResource>
+          <LocaleResource Name="Change">
+            <Value>Cambio a</Value>
+          </LocaleResource>
+          <LocaleResource Name="List">
+            <Value>Lista de Usuarios</Value>
+          </LocaleResource>
+          <LocaleResource Name="Create">
+            <Value>Usuario</Value>
+            <Children>
+              <LocaleResource Name="New">
+                <Value>Nuevo Usuario</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Edit">
+            <Value>Usuario</Value>
+            <Children>
+              <LocaleResource Name="Edit">
+                <Value>Editar Usuario</Value>
+              </LocaleResource>
+              <LocaleResource Name="NotToChange">
+                <Value>Dejar en blanco para no cambiar</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Common">
+        <Children>
+          <LocaleResource Name="DownloadFileAsPdf">
+            <Value>Descargar archivo en PDF</Value>
+          </LocaleResource>
+          <LocaleResource Name="Start">
+            <Value>Inicio</Value>
+          </LocaleResource>
+          <LocaleResource Name="Edit">
+            <Value>Editar</Value>
+          </LocaleResource>
+          <LocaleResource Name="Delete">
+            <Value>Eliminar</Value>
+          </LocaleResource>
+          <LocaleResource Name="Save">
+            <Value>Guardar</Value>
+          </LocaleResource>
+          <LocaleResource Name="BackToList">
+            <Value>Volver a la lista</Value>
+          </LocaleResource>
+          <LocaleResource Name="Options">
+            <Value>Opciones</Value>
+          </LocaleResource>
+          <LocaleResource Name="AddNew">
+            <Value>Agregar nuevo</Value>
+          </LocaleResource>
+          <LocaleResource Name="Add">
+            <Value>Adjuntar</Value>
+          </LocaleResource>
+          <LocaleResource Name="Select">
+            <Value>Seleccione...</Value>
+          </LocaleResource>
+          <LocaleResource Name="AccessDenied">
+            <Value>Acceso denegado</Value>
+            <Children>
+              <LocaleResource Name="Message">
+                <Value>Usted no tiene permisos para acceder a esta área. Contacte a un Administrador</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Search">
+            <Value>Buscar...</Value>
+          </LocaleResource>
+          <LocaleResource Name="Searching">
+            <Value>Búsqueda</Value>
+          </LocaleResource>
+          <LocaleResource Name="SubmitSearch">
+            <Value>Buscar</Value>
+          </LocaleResource>
+          <LocaleResource Name="Administration">
+            <Value>Administración</Value>
+          </LocaleResource>
+          <LocaleResource Name="EmailSample">
+            <Value>ejemplo@mail.com</Value>
+          </LocaleResource>
+          <LocaleResource Name="ExportToExcel">
+            <Value>Exportar Excel</Value>
+          </LocaleResource>
+          <LocaleResource Name="ConfirmDelete">
+            <Value>Confirmar</Value>
+          </LocaleResource>
+          <LocaleResource Name="MessageDelete">
+            <Value>Esta por eliminar: </Value>
+          </LocaleResource>
+          <LocaleResource Name="QuestionMessageDelete">
+            <Value>¿Esta seguro/a?</Value>
+          </LocaleResource>
+          <LocaleResource Name="Yes">
+            <Value>Sí</Value>
+          </LocaleResource>
+          <LocaleResource Name="No">
+            <Value>No</Value>
+          </LocaleResource>
+          <LocaleResource Name="Month">
+            <Value>Mes</Value>
+            <Children>
+              <LocaleResource Name="January">
+                <Value>Enero</Value>
+              </LocaleResource>
+              <LocaleResource Name="February">
+                <Value>Febrero</Value>
+              </LocaleResource>
+              <LocaleResource Name="March">
+                <Value>Marzo</Value>
+              </LocaleResource>
+              <LocaleResource Name="April">
+                <Value>Abril</Value>
+              </LocaleResource>
+              <LocaleResource Name="May">
+                <Value>Mayo</Value>
+              </LocaleResource>
+              <LocaleResource Name="June">
+                <Value>Junio</Value>
+              </LocaleResource>
+              <LocaleResource Name="July">
+                <Value>Julio</Value>
+              </LocaleResource>
+              <LocaleResource Name="August">
+                <Value>Agosto</Value>
+              </LocaleResource>
+              <LocaleResource Name="September">
+                <Value>Septiembre</Value>
+              </LocaleResource>
+              <LocaleResource Name="October">
+                <Value>Octubre</Value>
+              </LocaleResource>
+              <LocaleResource Name="November">
+                <Value>Noviembre</Value>
+              </LocaleResource>
+              <LocaleResource Name="December">
+                <Value>Diciembre</Value>
+              </LocaleResource>
+              <LocaleResource Name="Jan">
+                <Value>Ene</Value>
+              </LocaleResource>
+              <LocaleResource Name="Feb">
+                <Value>Feb</Value>
+              </LocaleResource>
+              <LocaleResource Name="Mar">
+                <Value>Mar</Value>
+              </LocaleResource>
+              <LocaleResource Name="Apr">
+                <Value>Abr</Value>
+              </LocaleResource>
+              <LocaleResource Name="May">
+                <Value>May</Value>
+              </LocaleResource>
+              <LocaleResource Name="Jun">
+                <Value>Jun</Value>
+              </LocaleResource>
+              <LocaleResource Name="Jul">
+                <Value>Jul</Value>
+              </LocaleResource>
+              <LocaleResource Name="Aug">
+                <Value>Ago</Value>
+              </LocaleResource>
+              <LocaleResource Name="Sep">
+                <Value>Sep</Value>
+              </LocaleResource>
+              <LocaleResource Name="Oct">
+                <Value>Oct</Value>
+              </LocaleResource>
+              <LocaleResource Name="Nov">
+                <Value>Nov</Value>
+              </LocaleResource>
+              <LocaleResource Name="Dec">
+                <Value>Dic</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Day">
+            <Value>Día</Value>
+            <Children>
+              <LocaleResource Name="Monday">
+                <Value>Lunes</Value>
+              </LocaleResource>
+              <LocaleResource Name="Tuesday">
+                <Value>Martes</Value>
+              </LocaleResource>
+              <LocaleResource Name="Wednesday">
+                <Value>Miércoles</Value>
+              </LocaleResource>
+              <LocaleResource Name="Thursday">
+                <Value>Jueves</Value>
+              </LocaleResource>
+              <LocaleResource Name="Friday">
+                <Value>Viernes</Value>
+              </LocaleResource>
+              <LocaleResource Name="Saturday">
+                <Value>Sábado</Value>
+              </LocaleResource>
+              <LocaleResource Name="Sunday">
+                <Value>Domingo</Value>
+              </LocaleResource>
+              <LocaleResource Name="Mon">
+                <Value>Lun</Value>
+              </LocaleResource>
+              <LocaleResource Name="Tue">
+                <Value>Mar</Value>
+              </LocaleResource>
+              <LocaleResource Name="Wed">
+                <Value>Mié</Value>
+              </LocaleResource>
+              <LocaleResource Name="Thu">
+                <Value>Jue</Value>
+              </LocaleResource>
+              <LocaleResource Name="Fri">
+                <Value>Vie</Value>
+              </LocaleResource>
+              <LocaleResource Name="Sat">
+                <Value>Sáb</Value>
+              </LocaleResource>
+              <LocaleResource Name="Sun">
+                <Value>Dom</Value>
+              </LocaleResource>
+              <LocaleResource Name="Mo">
+                <Value>Lu</Value>
+              </LocaleResource>
+              <LocaleResource Name="Tu">
+                <Value>Ma</Value>
+              </LocaleResource>
+              <LocaleResource Name="We">
+                <Value>Mi</Value>
+              </LocaleResource>
+              <LocaleResource Name="Th">
+                <Value>Ju</Value>
+              </LocaleResource>
+              <LocaleResource Name="Fr">
+                <Value>Vi</Value>
+              </LocaleResource>
+              <LocaleResource Name="Sa">
+                <Value>Sá</Value>
+              </LocaleResource>
+              <LocaleResource Name="Su">
+                <Value>Do</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Week">
+            <Value>Semana</Value>
+            <Children>
+              <LocaleResource Name="Wk">
+                <Value>Sm</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="ViewFile">
+            <Value>Ver archivo</Value>
+          </LocaleResource>
+          <LocaleResource Name="VerifyError">
+            <Value>Verifique los errores encontrados</Value>
+          </LocaleResource>
+          <LocaleResource Name="ObligatoryProperty">
+            <Value>* Propiedades o campos obligatorios</Value>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Role">
+        <Value>Rol</Value>
+        <Children>
+          <LocaleResource Name="Roles">
+            <Value>Roles</Value>
+          </LocaleResource>
+          <LocaleResource Name="List">
+            <Value>Lista de Roles</Value>
+          </LocaleResource>
+          <LocaleResource Name="Create">
+            <Value>Rol</Value>
+            <Children>
+              <LocaleResource Name="New">
+                <Value>Nuevo Rol</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Edit">
+            <Value>Rol</Value>
+            <Children>
+              <LocaleResource Name="Edit">
+                <Value>Editar Rol</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="PermissionRecordsAssigned">
+            <Value>Ver Permisos</Value>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Shared">
+        <Children>
+          <LocaleResource Name="HeaderPartial">
+            <Children>
+              <LocaleResource Name="ClearCache">
+                <Value>Limpiar cache</Value>
+              </LocaleResource>
+              <LocaleResource Name="MyProfile">
+                <Value>Perfil</Value>
+              </LocaleResource>
+              <LocaleResource Name="LogOff">
+                <Value>Cerrar sesión</Value>
+              </LocaleResource>
+              <LocaleResource Name="LoggedInAs">
+                <Value> Conectado como: </Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Bank">
+        <Value>Banco</Value>
+        <Children>
+          <LocaleResource Name="Banks">
+            <Value>Bancos</Value>
+          </LocaleResource>
+          <LocaleResource Name="List">
+            <Value>Lista de Bancos</Value>
+          </LocaleResource>
+          <LocaleResource Name="Create">
+            <Value>Banco</Value>
+            <Children>
+              <LocaleResource Name="New">
+                <Value>Nuevo Banco</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Edit">
+            <Value>Banco</Value>
+            <Children>
+              <LocaleResource Name="Edit">
+                <Value>Editar Banco</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Configuration">
+        <Value>Configuración</Value>
+        <Children>
+          <LocaleResource Name="Language">
+            <Value>Idioma</Value>
+            <Children>
+              <LocaleResource Name="Languages">
+                <Value>Idiomas</Value>
+              </LocaleResource>
+              <LocaleResource Name="ViewLocaleStringResources">
+                <Value>Ver Recursos</Value>
+              </LocaleResource>
+              <LocaleResource Name="LocaleStringResource">
+                <Value>Recurso</Value>
+                <Children>
+                  <LocaleResource Name="Edit">
+                    <Value>Recurso</Value>
+                    <Children>
+                      <LocaleResource Name="Edit">
+                        <Value>Editar Recurso</Value>
+                      </LocaleResource>
+                    </Children>
+                  </LocaleResource>
+                </Children>
+              </LocaleResource>
+              <LocaleResource Name="List">
+                <Value>Lista de Idioma</Value>
+              </LocaleResource>
+              <LocaleResource Name="Create">
+                <Value>Idioma</Value>
+                <Children>
+                  <LocaleResource Name="New">
+                    <Value>Nuevo Idioma</Value>
+                  </LocaleResource>
+                </Children>
+              </LocaleResource>
+              <LocaleResource Name="Edit">
+                <Value>Idioma</Value>
+                <Children>
+                  <LocaleResource Name="Edit">
+                    <Value>Editar Idioma</Value>
+                  </LocaleResource>
+                </Children>
+              </LocaleResource>
+              <LocaleResource Name="Resource">
+                <Value>Recursos</Value>
+                <Children>
+                  <LocaleResource Name="List">
+                    <Value>Lista de Recursos</Value>
+                  </LocaleResource>
+                </Children>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Property">
+            <Value>Propiedad</Value>
+            <Children>
+              <LocaleResource Name="Properties">
+                <Value>Propiedades</Value>
+              </LocaleResource>
+              <LocaleResource Name="List">
+                <Value>Lista de propiedades</Value>
+              </LocaleResource>
+              <LocaleResource Name="Create">
+                <Value>Propiedad</Value>
+                <Children>
+                  <LocaleResource Name="New">
+                    <Value>Nueva propiedad</Value>
+                  </LocaleResource>
+                </Children>
+              </LocaleResource>
+              <LocaleResource Name="Edit">
+                <Value>Propiedad</Value>
+                <Children>
+                  <LocaleResource Name="Edit">
+                    <Value>Editar Propiedad</Value>
+                  </LocaleResource>
+                </Children>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Table">
+        <Children>
+          <LocaleResource Name="Pagination">
+            <Children>
+              <LocaleResource Name="First">
+                <Value>Primero</Value>
+              </LocaleResource>
+              <LocaleResource Name="Last">
+                <Value>Último</Value>
+              </LocaleResource>
+              <LocaleResource Name="Next">
+                <Value>Siguiente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Previous">
+                <Value>Anterior</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+
+          <LocaleResource Name="Filtered">
+            <Children>
+              <LocaleResource Name="Search">
+                <Value>Buscar: </Value>
+              </LocaleResource>             
+            </Children>
+          </LocaleResource>
+
+          <LocaleResource Name="Info">
+            <Children>
+              <LocaleResource Name="Info">
+                <Value>Registros del {0} al {1} de {2}</Value>
+              </LocaleResource>
+              <LocaleResource Name="InfoEmpty">
+                <Value>0 registros</Value>
+              </LocaleResource>
+              <LocaleResource Name="LoadingRecords">
+                <Value>Cargando...</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+
+          <LocaleResource Name="Length">
+            <Children>
+              <LocaleResource Name="LengthMenu">
+                <Value>Mostrar  {0}  registros</Value>
+              </LocaleResource>
+              <LocaleResource Name="EmptyTable">
+                <Value>No hay datos disponibles</Value>
+              </LocaleResource>
+              <LocaleResource Name="LoadingRecords">
+                <Value>Cargando...</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+
+          <LocaleResource Name="Processing">
+            <Value>Procesando...</Value>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Others">
+        <Children>
+          <LocaleResource Name="Payment">
+            <Value>Pago</Value>
+            <Children>
+              <LocaleResource Name="Payments">
+                <Value>Pagos</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+    </Children>
+  </LocaleResource>
+
+  <LocaleResource Name="Controller">
+    <Children>
+      <LocaleResource Name="User">
+        <Value>Usuario</Value>
+        <Children>
+          <LocaleResource Name="Login">
+            <Value>Login</Value>
+            <Children>
+              <LocaleResource Name="LoginError">
+                <Value>El Nombre de Usuario y/o la Contraseña no son correctos</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Success">
+        <Children>
+          <LocaleResource Name="Bank">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Banco ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Banco ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Banco ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="BorderCrossing">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Paso Fronterizo ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Paso Fronterizo ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Paso Fronterizo ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Country">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El País ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El País ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El País ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Currency">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>La Moneda ha sido agregada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>La Moneda ha sido actualizada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>La Moneda ha sido eliminada correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="CompanyInpectionPreboarding">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>La Empresa de Inspección de Preembarque ha sido agregada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>La Empresa de Inspección de Preembarque ha sido actualizada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>La Empresa de Inspección de Preembarque ha sido eliminada correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="CompanyTransportMeans">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>La Empresa de Medios de Transporte ha sido agregada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>La Empresa de Medios de Transporte ha sido actualizada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>La Empresa de Medios de Transporte ha sido eliminada correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="CustomBroker">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Despachante de Aduana ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Despachante de Aduana ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Despachante de Aduana ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="CustomHouse">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>La Aduana ha sido agregada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>La Aduana ha sido actualizada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>La Aduana ha sido eliminada correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="ExteriorBeneficiary">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Beneficiario Exterior ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Beneficiario Exterior ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Beneficiario Exterior ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Incoterm">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Incoterm ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Incoterm ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Incoterm ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Languague">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Idioma ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Idioma ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Idioma ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+            <LocaleResource Name="Resource">
+              <Children>
+                <LocaleResource Name="Insert">
+                  <Value>El Recurso ha sido agregado correctamente</Value>
+                </LocaleResource>
+                <LocaleResource Name="Update">
+                  <Value>El Recurso ha sido actualizado correctamente</Value>
+                </LocaleResource>
+                <LocaleResource Name="Delete">
+                  <Value>El Recurso ha sido eliminado correctamente</Value>
+                </LocaleResource>
+              </Children>
+            </LocaleResource>
+          </LocaleResource>
+          <LocaleResource Name="Role">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Role ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Role ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Role ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="User">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Usuario ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Usuario ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Usuario ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Product">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Articulo ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Articulo ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Articulo ha sido eliminado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Make">
+                <Children>
+                  <LocaleResource Name="Insert">
+                    <Value>La Marca ha sido agregado correctamente</Value>
+                  </LocaleResource>
+                  <LocaleResource Name="Update">
+                    <Value>La Marca ha sido actualizada correctamente</Value>
+                  </LocaleResource>
+                  <LocaleResource Name="Delete">
+                    <Value>La Marca ha sido eliminada correctamente</Value>
+                  </LocaleResource>
+                </Children>
+              </LocaleResource>
+              <LocaleResource Name="Model">
+                <Children>
+                  <LocaleResource Name="Insert">
+                    <Value>El Modelo ha sido agregado correctamente</Value>
+                  </LocaleResource>
+                  <LocaleResource Name="Update">
+                    <Value>El Modelo ha sido actualizado correctamente</Value>
+                  </LocaleResource>
+                  <LocaleResource Name="Delete">
+                    <Value>El Modelo ha sido eliminado correctamente</Value>
+                  </LocaleResource>
+                </Children>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Property">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>La Propiedad ha sido agregada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>La Propiedad ha sido actualizada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>La Propiedad ha sido eliminada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Category">
+                <Children>
+                  <LocaleResource Name="Insert">
+                    <Value>La Categoria ha sido agregada correctamente</Value>
+                  </LocaleResource>
+                  <LocaleResource Name="Update">
+                    <Value>La Categoria ha sido actualizada correctamente</Value>
+                  </LocaleResource>
+                  <LocaleResource Name="Delete">
+                    <Value>La Categoria ha sido eliminada correctamente</Value>
+                  </LocaleResource>
+                </Children>
+              </LocaleResource>
+            </Children>
+            <LocaleResource Name="Make">
+              <Children>
+                <LocaleResource Name="Insert">
+                  <Value>La Marca ha sido agregado correctamente</Value>
+                </LocaleResource>
+                <LocaleResource Name="Update">
+                  <Value>La Marca ha sido actualizada correctamente</Value>
+                </LocaleResource>
+                <LocaleResource Name="Delete">
+                  <Value>La Marca ha sido eliminada correctamente</Value>
+                </LocaleResource>
+              </Children>
+            </LocaleResource>
+          </LocaleResource>
+          <LocaleResource Name="Provider">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Proveedor ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Proveedor ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Proveedor ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="StorageDeposit">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Deposito de almacenamiento ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Deposito de almacenamiento ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Deposito de almacenamiento ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="BuyOrder">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>La Orden de compra ha sido agregada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>La Orden de compra ha sido actualizada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>La Orden de compra ha sido eliminada correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="PaymentMean">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Medio de pago ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Medio de pago ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Medio de pago ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="PaymentCondition">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>La Condición de pago ha sido agregada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>La Condición de pago ha sido actualizada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>La Condición de pago ha sido eliminada correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Harbor">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Puerto ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Puerto ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Puerto ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Proforma">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>La proforma ha sido agregada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>La proforma ha sido actualizada correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>La proforma ha sido eliminada correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Error">
+        <Children>
+          <LocaleResource Name="Bank">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El banco ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El banco ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El banco ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="BorderCrossing">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Paso Fronterizo ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Paso Fronterizo ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Paso Fronterizo ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Country">
+            <Value>Se ha producido un error. Para mas detalles vea el registro de Errores</Value>
+          </LocaleResource>
+          <LocaleResource Name="Currency">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>La Moneda ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>La Moneda ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>La Moneda ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="CustomBroker">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Despachante de Aduana ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Despachante de Aduana ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Despachante de Aduana ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="CustomHouse">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>La Aduana ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>La Aduana ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>La Aduana ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="ExteriorBeneficiary">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Beneficiario Exterior ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Beneficiario Exterior ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Beneficiario Exterior ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Incoterm">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Incoterm ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Incoterm ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Incoterm ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Languague">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Idioma ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Idioma ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Idioma ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+            <LocaleResource Name="Resource">
+              <Children>
+                <LocaleResource Name="Insert">
+                  <Value>El Recurso ha sido agregado correctamente</Value>
+                </LocaleResource>
+                <LocaleResource Name="Update">
+                  <Value>El Recurso ha sido actualizado correctamente</Value>
+                </LocaleResource>
+                <LocaleResource Name="Delete">
+                  <Value>El Recurso ha sido eliminado correctamente</Value>
+                </LocaleResource>
+              </Children>
+            </LocaleResource>
+          </LocaleResource>
+          <LocaleResource Name="Role">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Role ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Role ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Role ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="User">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>El Usuario ha sido agregado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>El Usuario ha sido actualizado correctamente</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>El Usuario ha sido eliminado correctamente</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="BuyOrder">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>Error</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>Error</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>Error</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="PaymentMean">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>Error</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>Error</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>Error</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="PaymentCondition">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>Error</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>Error</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>Error</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+          <LocaleResource Name="Harbor">
+            <Children>
+              <LocaleResource Name="Insert">
+                <Value>Error</Value>
+              </LocaleResource>
+              <LocaleResource Name="Update">
+                <Value>Error</Value>
+              </LocaleResource>
+              <LocaleResource Name="Delete">
+                <Value>Error</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+    </Children>
+  </LocaleResource>
+
+  <LocaleResource Name="PermissionRecords">
+    <Value>Permisos</Value>
+    <Children>
+      <LocaleResource Name="Standard">
+        <Value>Estandar</Value>
+        <Children>
+          <LocaleResource Name="AccessPanelAdministration">
+            <Value>Acceso panel de administración</Value>
+          </LocaleResource>
+          <LocaleResource Name="AccessPanelSedronar">
+            <Value>Acceso panel de Sedronar</Value>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+      <LocaleResource Name="Administration">
+        <Value>Administración</Value>
+        <Children>
+          <LocaleResource Name="ManageRoles">
+            <Value>Administrar Roles</Value>
+          </LocaleResource>
+          <LocaleResource Name="ManageUsers">
+            <Value>Administrar Usuarios</Value>
+          </LocaleResource>
+          <LocaleResource Name="ManageChangePasswordsAndPermissions">
+            <Value>Modificar contraseñas y permisos</Value>
+          </LocaleResource>
+          <LocaleResource Name="ManageBanks">
+            <Value>Administrar Bancos</Value>
+          </LocaleResource>
+          <LocaleResource Name="ManageSystemLogs">
+            <Value>Administrar Errores del Sistema</Value>
+          </LocaleResource>
+          <LocaleResource Name="ManageLanguages">
+            <Value>Administrar Idiomas</Value>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+    </Children>
+  </LocaleResource>
+
+  <LocaleResource Name="Validator">
+    <Children>
+      <LocaleResource Name="User">
+        <Children>
+          <LocaleResource Name="LoginNameRequerid">
+            <Value>Se requiere un Nombre de Usuario</Value>
+          </LocaleResource>
+          <LocaleResource Name="LoginNameUnavailable">
+            <Value>El Nombre de Usuario ya existe</Value>
+          </LocaleResource>
+          <LocaleResource Name="NameRequerid">
+            <Value>Por favor ingrese su Nombre de Usuario</Value>
+          </LocaleResource>
+          <LocaleResource Name="NameUnavailable">
+            <Value>El Nombre ya existe</Value>
+          </LocaleResource>
+          <LocaleResource Name="DocumentNumberRequerid">
+            <Value>Se requiere un Número de Documento</Value>
+          </LocaleResource>
+          <LocaleResource Name="DocumentNumberUnavailable">
+            <Value>El Número de Documento esta en uso</Value>
+          </LocaleResource>
+          <LocaleResource Name="EmailWrong">
+            <Value>El E-mail no es valido o tiene una sintaxis incorrecta</Value>
+          </LocaleResource>
+          <LocaleResource Name="CurrentPasswordRequerid">
+            <Value>Se requiere la Contraseña actual en uso</Value>
+          </LocaleResource>
+          <LocaleResource Name="CurrentPasswordRequerid">
+            <Value>La contraseña actual es invalida</Value>
+          </LocaleResource>
+          <LocaleResource Name="PasswordMinLength">
+            <Value>La contraseña debe tener como mínimo 6 (seis) caracteres</Value>
+          </LocaleResource>
+          <LocaleResource Name="EnteredPasswordsDoNotMatch">
+            <Value>Las contraseñas no coinciden</Value>
+          </LocaleResource>
+          <LocaleResource Name="PasswordRequerid">
+            <Value>Por favor ingrese su contraseña</Value>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Role">
+        <Children>
+          <LocaleResource Name="NameRequerid">
+            <Value>Se requiere un Nombre</Value>
+          </LocaleResource>
+          <LocaleResource Name="NameUnavailable">
+            <Value>El Nombre ya existe</Value>
+          </LocaleResource>
+          <LocaleResource Name="NameMaxLength">
+            <Value>El Nombre no puede superar los 40 carácteres</Value>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Bank">
+        <Children>
+          <LocaleResource Name="NameRequerid">
+            <Value>Se requiere un Nombre</Value>
+          </LocaleResource>
+          <LocaleResource Name="NameUnavailable">
+            <Value>El Nombre ya existe</Value>
+          </LocaleResource>
+          <LocaleResource Name="CodeRequerid">
+            <Value>Se requiere un Código de Banco</Value>
+          </LocaleResource>
+          <LocaleResource Name="CodeUnavailable">
+            <Value>El Código de Banco ya existe</Value>
+          </LocaleResource>
+          <LocaleResource Name="AccountRequerid">
+            <Value>Se requiere una Cuenta Bancaria</Value>
+          </LocaleResource>
+          <LocaleResource Name="AccountUnavailable">
+            <Value>La Cuenta Bancaria ya existe</Value>
+          </LocaleResource>
+          <LocaleResource Name="NameMaxLength">
+            <Value>El Nombre no puede superar los 40 carácteres</Value>
+          </LocaleResource>
+          <LocaleResource Name="CodeMaxLength">
+            <Value>El Código no puede superar los 4 carácteres</Value>
+          </LocaleResource>
+          <LocaleResource Name="AccountMaxLength">
+            <Value>El valor de Cuenta Bancaria no puede superar los 15 carácteres</Value>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Configuration">
+        <Children>
+          <LocaleResource Name="Language">
+            <Value>Idioma</Value>
+            <Children>
+              <LocaleResource Name="NameRequerid">
+                <Value>Se requiere un Nombre</Value>
+              </LocaleResource>
+              <LocaleResource Name="NameUnavailable">
+                <Value>El Nombre ya existe</Value>
+              </LocaleResource>
+              <LocaleResource Name="NameMaxLength">
+                <Value>El Nombre no puede superar los 15 carácteres</Value>
+              </LocaleResource>
+              <LocaleResource Name="LanguageCultureRequerid">
+                <Value>Se requiere una Referencia Cultural</Value>
+              </LocaleResource>
+            </Children>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+
+      <LocaleResource Name="Order">
+        <Children>
+          <LocaleResource Name="BuyOrderIDRequerid">
+            <Value>Se requiere un ID</Value>
+          </LocaleResource>
+          <LocaleResource Name="BuyOrderIDUnavailable">
+            <Value>El ID ya existe</Value>
+          </LocaleResource>
+          <LocaleResource Name="DocumentDateRequerid">
+            <Value>Se requiere una Fecha de documento</Value>
+          </LocaleResource>
+        </Children>
+      </LocaleResource>
+    </Children>
+  </LocaleResource>
+</Language>
